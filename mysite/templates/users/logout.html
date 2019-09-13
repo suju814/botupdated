@@ -1,0 +1,202 @@
+
+\{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>BOT TRADER</title>
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/animate.min.css" rel="stylesheet"> 
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/css/lightbox.css" rel="stylesheet">
+  <link href="static/css/main.css" rel="stylesheet">
+  <link id="css-preset" href="static/css/presets/preset1.css" rel="stylesheet">
+  <link href="static/css/responsive.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="static/images/favicon.ico">
+</head><!--/head-->
+<style type="text/css">
+        .asteriskfield{
+            display:none;
+        }
+        form .alert ul li{
+            list-style:none;
+        }
+        form .alert ui{
+            padding: 0;
+            margin :0;
+        }
+        
+        
+        
+    </style>
+
+<body>
+
+  <!--.preloader-->
+  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(static/images/slider/chart.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Welcome to <span>BOT TRADING</span></h1>
+            <p class="animated fadeInRightBig"></p>
+            
+          </div>
+        </div>
+        <div class="item" style="background-image: url(static/images/slider/bitcoin.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <span>BOT Trading</span></h1>
+           
+           
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/static/images/slider/stack.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+            
+          </div>
+        </div>
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+      <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="static/images/icon.jpg" width="70" alt="Bot Trader"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Home</a></li>
+            
+             {% if user.is_authenticated %}
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         {{ user.username }}(bal:200$)         
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item"  style="color:blue">Change Password</a>
+                                  
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="{% url 'logout' %}" style="color:blue">Logout</a>
+                                  
+                                                
+                                </div>
+                             </li>
+                            
+              
+                
+                {% else %}
+                            
+            <li>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in/Signup</a></li>
+            
+            
+                            
+                {% endif %}       
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+  
+
+  <section id="portfolio">
+    <div class="container" style="color: blue"> 
+    
+  
+    <div class="row justify-content-center" style="color: blue">
+        
+        <div class="col-sm-4">
+            
+</div>
+<div class="col-sm-4" style="color: blue">
+         <center><h2 style="color: blue">You have been logged out</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url '' %}">Log In Again</a>
+        </small>
+    </div>    
+        </center>
+</div>
+</div>
+<div class="col-sm-4">
+            
+    </div>
+
+
+
+</div>
+</section>
+
+    
+
+  <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" alt="BOT TRADE"></a>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> 
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2019 BOT TRADE </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="static/js/jquery.js"></script>
+  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="static/js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="static/js/wow.min.js"></script>
+  <script type="text/javascript" src="static/js/mousescroll.js"></script>
+  <script type="text/javascript" src="static/js/smoothscroll.js"></script>
+  <script type="text/javascript" src="static/js/jquery.countTo.js"></script>
+  <!-- <script type="text/javascript" src="staticjs/lightbox.min.js"></script> -->
+  <script type="text/javascript" src="static/js/main.js"></script>
+
+</body>
+</html>
