@@ -11,7 +11,7 @@ django-celery-beat==1.5.0
 django-crispy-forms==1.7.2
 django-extensions==1.9.7
 django-timezone-field==3.0
-djangorestframework==3.7.1
+djangorestframework==3.11.2
 future==0.17.1
 idna==2.8
 importlib-metadata==0.19
