@@ -4,7 +4,7 @@ celery==4.3.0
 certifi==2019.6.16
 chardet==3.0.4
 defusedxml==0.6.0
-Django==2.2.4
+Django==2.2.27
 -e git://github.com/arteria/django-background-image.git@30d2c80512bfde0aaf927bde84a50a20e089cd9c#egg=django_background_image
 django-bootstrap-form==3.4
 django-celery-beat==1.5.0
